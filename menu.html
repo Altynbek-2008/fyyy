@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link
+  rel="stylesheet"
+  href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+</head>
+<body class="menu-body">
+  <header class="main-header2">
+    <div class="logo">
+      <img src="./logo bluee.png" alt="Logo" />
+    </div>
+    <nav class="menu-page">
+      <a href="./index.html">Home</a>
+      <a href="./menu.html">Menu</a>
+      <a href="./merch.html">Merch</a>
+      <a href="./cart.html">My Cart</a>
+    </nav>
+    
+    <div id="burger" class="burger">&#9776;</div>
+
+    <!-- Мобильді меню -->
+    <div id="mobileMenu" class="mobile-menu">
+      <span id="closeBtn" class="close-btn">&times;</span>
+      <a href="./index.html">Home</a>
+      <a href="./menu.html">Menu</a>
+      <a href="./merch.html">Merch</a>
+      <a href="./cart.html">Cart</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="menu-main">
+      <img src="./samsa.png" alt="">
+      <div class="menu-text">
+        <div class="samsa-img">
+          <img src="./samsa1.png" alt="">
+          <h3>best price store</h3>
+        </div>
+        <h1>Place where you <br> have a good time.</h1>
+        <p>Made of fresh & food</p>
+      </div>
+    </div>
+
+
+
+<div class="canteen-menu">
+    <h1>Top Selling Products</h1>
+    
+
+    <div class="buttons">
+  <button class="category-btn active" onclick="filterCategory('sweets', event)">SWEETS</button>
+  <button class="category-btn" onclick="filterCategory('chips', event)">CHIPS</button>
+  <button class="category-btn" onclick="filterCategory('drinks', event)">DRINKS</button>
+  <button class="category-btn" onclick="filterCategory('ice', event)">ICE CREAM</button>
+</div>
+<div class="wrapper">
+  <div class="slider-buttons">
+    <button onclick="prevColumn()">⬅</button>
+    <button onclick="nextColumn()">➡</button>
+  </div>
+  <div class="card-container" id="cards"></div>
+</div>
+
+    <div class="card-container" id="cards"></div>
+
+</div>
+   
+
+
+
+
+<div class="new-bakery">
+ 
+  <img src="./выпечки.jpg" alt="">
+  <div>
+    <div class="top">
+      <h2>Top Products</h2>
+    
+    </div>
+    <div id="bakery-section" class="bakery-container"></div>
+    
+  </div>
+</div>
+  </main>
+
+
+  <footer2 class="section-p1">
+    <div class="col">
+      <img class="logo" src="./logo bluee.png" alt="" />
+      <h4>Contact</h4>
+      <p><strong>Address:</strong> Taraz, Street: Pushkin 154</p>
+      <p><strong>Phone:</strong> +7 777 777 77 77</p>
+      <p><strong>Hours:</strong> 8:45 - 16:40, Mon - Fri</p>
+      <div class="follow">
+        <h4>Follow us</h4>
+        <div class="icon">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-pinterest-p"></i>
+          <i class="fab fa-youtube"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <h4>About</h4>
+      <a href="#">About us</a>
+      <a href="#">Delivery Information</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <div class="col">
+      <h4>My Account</h4>
+      <a href="#">Sign In</a>
+      <a href="#">View Cart</a>
+      <a href="#">My Wishlist</a>
+      <a href="#">Track My Order</a>
+      <a href="#">Help</a>
+    </div>
+    <div class="col install">
+      <p>Secured Payment Gateway</p>
+      <div class="pay">
+        <img src="./kass.png" alt="">
+        <img src="./money.png" alt="">
+      </div>    </div>
+
+  </footer>
+  <script src="./script.js"></script>
+</body>
+</html>

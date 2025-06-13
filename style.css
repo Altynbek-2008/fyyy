@@ -1,0 +1,1470 @@
+/* Барлығын нөлден бастаймыз */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #ffffff;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #023055;
+}
+
+/* Төбе (header) */
+.main-header {
+  width: 100%;
+  height: 70px;
+  padding: 10px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-body {
+  padding-top: 10px;
+}
+
+/* Логотип */
+.logo img {
+  height: 38px;
+  object-fit: cover;
+  margin-left: 30px;
+}
+
+/* Мәзір */
+.menu {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(11px);
+  padding: 10px 30px;
+  border-radius: 40px;
+  display: flex;
+  gap: 30px;
+  box-shadow: 0 0 9px #ffffff;
+  position: fixed;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.menu a {
+  text-decoration: none;
+  color: #222;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+
+/* Бургер түймесі */
+.burger {
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+  display: none; /* десктопта жасыру */
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  z-index: 2001;
+}
+
+/* Мобильді меню */
+.mobile-menu {
+  background-color: #094270;
+  position: fixed;
+  top: 0;
+  right: -100%; /* Бастапқыда жасыру */
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 60px 20px;
+  transition: right 0.3s ease;
+  z-index: 2000;
+}
+
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.close-btn {
+  font-size: 45px;
+  color: white;
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  cursor: pointer;
+}
+
+/* Тек мобильде көрсету */
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .menu {
+    display: none; /* Десктоп мәзірін жасыру */
+  }
+
+ .logo img {
+    margin-left: 5px;
+    margin-bottom: 10px;
+    
+  }
+}
+
+/* Сәлемдесу бөлімі */
+.hero {
+  text-align: start;
+  padding: 70px 80px;
+  display: flex;
+  margin-top: 60px;
+}
+
+.hero h1 {
+  font-size: 47px;
+  width: 900px;
+  font-family: 'Titan One', cursive;
+  font-size: 65px;
+  text-shadow: 2px 2px 0 #00a89d;
+  border: #3C8F3C;
+}
+
+.hero img {
+  margin-top: -90px;
+  margin-right: -70px;
+  width: 700px;
+  height: 500px;
+}
+
+.text {
+  display: flex;
+  color: #ffffff;
+  gap: 17px;
+  padding-left: 70px;
+  margin-top: -200px;
+}
+
+.text img {
+  width: 80px;
+  height: 100px;
+  margin-top: -40px;
+}
+
+.btn-home {
+  background-color: #FFB602;
+  padding: 10px 25px;
+  border-radius: 20px;
+  border: none;
+  font-size: 15px;
+  color: #422e00;
+  font-weight: 500;
+}
+
+.btn {
+  padding-left: 80px;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 30px 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 35px;
+    width: auto;
+    text-align: center;
+  }
+
+  .hero img {
+    width: 90%;
+    height: auto;
+    margin: 20px 0 0 0;
+    justify-content: center;
+  }
+
+  .text {
+    align-items: center;
+    padding-left: 0;
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  .text img {
+    margin-top: -70px;
+    width: 60px;
+    height: 80px;
+  }
+
+  .btn {
+    padding-left: 0;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-home {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 26px;
+  }
+}
+
+.come-text h1 {
+  font-family: 'Titan One', cursive;
+  text-shadow: 2px 2px 0 #00a89d;
+  border: #3C8F3C;
+  font-size: 47px;
+}
+
+.come-text p {
+  margin-top: 30px;
+  line-height: 23px;
+}
+
+.come-text {
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.canteen-photo {
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.canteen-photo img {
+  width: 300px;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.container {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.heading {
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: 'Titan One', cursive;
+  text-shadow: 2px 2px 0 #00a89d;
+  border: #3C8F3C;
+  color: #ffffff;
+  max-width: 500px;
+  margin-left: 125px;
+  font-size: 43px;
+  text-align: center;
+}
+
+.description {
+  font-size: 1em;
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto 30px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-button.left {
+  left: -60px;
+}
+
+.nav-button.right {
+  right: -60px;
+}
+
+.nav-button::before {
+  content: '';
+  border: solid;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 10px;
+}
+
+.nav-button.left::before {
+  transform: rotate(135deg);
+}
+
+.nav-button.right::before {
+  transform: rotate(-45deg);
+}
+
+.dots {
+  margin-top: 40px;
+  margin-left: 330px;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #FDCB2E;
+}
+
+.go-menu {
+  border-radius: 30px;
+  background-color: #FDCB2E;
+  padding: 13px 30px;
+  color: #422e00;
+  text-decoration: none;
+
+  border: none;
+  font-weight: 600;
+  margin-left: 320px;
+}
+
+@media (max-width: 768px) {
+  .come-text h1 {
+    font-size: 30px;
+  }
+
+  .come-text p {
+    margin-top: 20px;
+    font-size: 14px;
+    padding: 0 20px;
+  }
+
+  .canteen-photo {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .canteen-photo img {
+    width: 90%;
+    height: auto;
+  }
+
+  .heading {
+    font-size: 30px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .description {
+    font-size: 14px;
+    padding: 0 15px;
+  }
+
+  .go-menu {
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto 0;
+    text-decoration: none;
+
+  }
+
+  .dots {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .nav-button.left,
+  .nav-button.right {
+    display: none;
+  }
+}
+
+.end-site {
+  width: 100%;
+  background-color: #094270;
+  border-radius: 60px 60px 0px 0px;
+}
+
+.end-site h1 {
+  padding: 80px;
+  text-align: center;
+  font-family: 'Titan One', cursive;
+  font-size: 40px;
+  text-shadow: 2px 2px 0 #00a89d;
+  border: #3C8F3C;
+}
+
+@media (max-width: 768px) {
+  .end-site h1 {
+    padding: 40px 20px;
+    font-size: 26px;
+  }
+
+  .end-site {
+    border-radius: 40px 40px 0 0;
+  }
+}
+
+footer {
+  display: flex;
+  padding-left: 80px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-right: 80px;
+}
+
+footer .col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+footer .logo {
+  margin-bottom: 30px;
+  height: 40px;
+  width: auto;
+  object-fit: cover;
+}
+
+footer h4 {
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+
+footer p {
+  font-size: 13px;
+  margin: 0 0 8px 0;
+}
+
+footer a {
+  font-size: 13px;
+  text-decoration: none;
+  margin: 0 0 10px 0;
+}
+
+footer .follow {
+  margin-top: 20px;
+}
+
+footer .follow i {
+  padding-right: 4px;
+  cursor: pointer;
+}
+
+footer .install .row img {
+  border: 1px solid #088178;
+  border-radius: 6px;
+  margin: 10px 0 15px 0;
+}
+
+footer .follow i:hover,
+footer a:hover {
+  color: #023055;
+}
+.pay img {
+height: 30px;
+width: auto;
+}
+.pay{
+  display: flex;
+  gap: 10px;
+
+}
+
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    padding-left: 20px;
+  }
+}
+
+
+/* menu page */
+.menu-body{
+  background-color: rgb(255, 251, 249);
+  color: #023055;
+}
+
+.menu-page {
+  background-color: rgba(255, 255, 255, 0.2); /* Мөлдір түс */
+  backdrop-filter: blur(8px); /* Blur эффект */
+  padding: 10px 30px;
+  border-radius: 40px;
+  display: flex;
+  gap: 30px;
+  box-shadow: 0 0 9px #023055;
+  position: fixed;
+  z-index: 1001; /* 🛠️ МІНЕ ОСЫ ЖЕР ҚОСЫЛДЫ */
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+
+  
+
+}
+.main-header2 {
+  width: 100%;
+  height: 70px;
+  padding: 10px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Жай көлеңке, әдемі көріну үшін */
+
+}
+
+.main-header2 .logo img{
+  height: 38px;
+  object-fit: cover;
+  margin-left: -2px;
+}
+.menu-page a {
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+  color: #023055;
+  font-weight: 600;
+
+}
+/* Бургер түймесі */
+.main-header2 .burger {
+  font-size: 25px;
+  color: black;
+  cursor: pointer;
+  display: none; /* десктопта жасыру */
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  z-index: 2001;
+}
+
+/* Мобильді меню */
+.main-header2 .mobile-menu {
+  background-color: #023055;
+  position: fixed;
+  top: 0;
+  right: -100%; /* Бастапқыда жасыру */
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 60px 20px;
+  transition: right 0.3s ease;
+  z-index: 2000;
+}
+
+.main-header2 .mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.main-header2 .close-btn {
+  font-size: 45px;
+  color: white;
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  cursor: pointer;
+}
+
+/* Тек мобильде көрсету */
+@media (max-width: 768px) {
+  .main-header2{
+    width: 120%;
+  }
+  .main-header2 .burger {
+    display: block;
+  }
+
+  .menu-page {
+    display: none; /* Десктоп мәзірін жасыру */
+  }
+
+  .main-header2 .logo img {
+    margin-bottom: 10px;
+    margin-left: -28px;
+    
+  }
+}
+
+.menu-page a:hover {
+  text-decoration: underline;
+}
+.menu-text{
+  margin-top: 30px;
+}
+.menu-text h3{
+  color: #FDCB2E;
+}
+.menu-text h1{
+  color: #023055;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-top: 30px;
+  font-size: 38px;
+}
+.menu-text p{
+  color: #858585;
+  margin-top: 20px;
+}
+
+.menu-main{
+  display: flex;
+  padding: 40px;
+  margin-top: 20px;
+}
+
+.menu-main img{
+  margin-top: -100px;
+  width: 550px;
+  height: 550px;
+  object-fit: cover;
+}
+
+.samsa-img{
+  display: flex;
+}
+.samsa-img img{
+  width: 80px;
+  height: auto;
+  object-fit: cover;
+  margin-top: -35px;
+  
+}
+
+@media (max-width: 768px) {
+  .menu-main {
+    flex-direction: column-reverse; /* Мәтін жоғарыда, сурет төменде болу үшін */
+    align-items: center;
+    padding: 20px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .menu-main img {
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+  }
+
+  .menu-text {
+    margin-top: 0;
+    padding: 0 10px;
+  }
+
+  .menu-text h1 {
+    font-size: 32px;
+    margin-top: 20px;
+  }
+
+  .menu-text p {
+    margin-top: 15px;
+    font-size: 16px;
+  }
+
+  /* samsa-img суреттері мәтіннің астына емес, жанына шығуы үшін */
+  .samsa-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-left: -20px;
+    flex-wrap: nowrap; /* сурет астына түсіп кетпесін */
+    margin-top: 25px;
+  }
+
+  .samsa-img img {
+    width: 60px;
+    height: auto;
+    object-fit: cover;
+    margin-top: 0;
+  }
+
+  .canteen-menu{
+    margin-top: 50px;
+  }
+
+  .canteen-menu h1{
+    font-size: 32px;
+    margin-left: 35px;
+  }
+}
+
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.category-btn {
+  padding: 5px 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  color: #333;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+  color: #023055;
+}
+
+.category-btn.active {
+  color: #023055;
+  border-bottom: 2px dashed #023055;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3px;
+  }
+
+  .category-btn {
+    font-size: 14px;
+  }
+}
+
+.slider-buttons {
+  position: absolute;
+  top: -50px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.slider-buttons button {
+  padding: 8px 10px;
+  border: none;
+  background-color: #023055;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.wrapper {
+  position: relative;
+}
+@media (max-width: 768px) {
+  .slider-buttons {
+    position: static; /* абсолютті емес, ағынмен орналасады */
+    margin-top: 20px;
+    justify-content: center;
+  }
+
+  .slider-buttons button {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+  margin-top: 30px;
+}
+.card {
+  background: rgb(255, 255, 255);
+  padding: 10px;
+  width: 210px;
+  height: 350px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: start;
+
+
+}
+.card img {
+  width: 180px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.title {
+  font-weight: bold;
+  margin-left: 12px;
+  margin-top: 15px;
+  color: #474747;
+}
+.price {
+  margin-left: 12px;
+margin-top: 10px;
+  color: #023055;
+  font-weight:800;
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .card {
+    width: 90%; /* экранға шақ болуы үшін */
+    height: auto;
+    padding: 12px;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .title,
+  .price {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 16px;
+    margin-top: 12px;
+  }
+
+  .price {
+    font-size: 18px;
+    margin-top: 8px;
+  }
+}
+
+
+.canteen-menu h1{
+  color: #023055;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  margin-top: -100px;
+}
+.canteen-menu{
+padding-right: 80px;
+padding-left: 80px;
+
+}
+
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 10px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+
+
+
+
+
+.quantity-controls {
+  border: 1px solid #474747;
+  padding: 2px 15px;
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  gap: 10px;
+}
+
+.quantity-controls h4 {
+  font-size: 25px;
+  cursor: pointer;
+  color: #474747;
+}
+.myidea{
+  display: flex;
+  gap: 5px;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.quantity {
+  font-weight: bold;
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+  color: #474747;
+}
+
+.add-to-cart {
+  margin-top: 10px;
+  padding: 6px 15px;
+  background-color: #023055;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+@media (max-width: 768px) {
+  .canteen-menu {
+    padding: 0 20px;
+  }
+
+  .canteen-menu h1 {
+    font-size: 24px;
+    margin-top: -40px;
+    text-align: center;
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+  }
+
+  .card {
+    min-width: 85%; /* 1 карточка көлемі */
+    flex-shrink: 0;
+    height: auto;
+  }
+
+
+  .card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  
+
+  .quantity-controls {
+    justify-content: center;
+    gap: 10px;
+    padding: 4px 10px;
+  }
+
+  .myidea {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .add-to-cart {
+    width: 65%;
+    text-align: center;
+    font-size: 16px;
+  }
+}
+
+
+
+
+
+.new-bakery{
+  display: flex;
+  padding-left: 80px;
+  margin-top: 20px;
+  gap: 40px;
+}
+
+
+.new-bakery img{
+  width: 550px;
+  object-fit: cover;
+}
+
+
+.bakery-container {
+  padding-right: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.bakery-card {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+  display: flex;
+  width: 245px;
+  height: 160px;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.bakery-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.bakery-card .title {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.bakery-card .price {
+  color: #023055;
+  margin-top: 5px;
+}
+
+.top h2{
+  color: #023055;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.box-bake{
+  display: flex;
+}
+
+.quantity-controls2{
+  cursor: pointer;
+  display: flex;
+  margin-top: 5px;
+  border-radius: 3px;
+  border: 1px solid #023055;
+  padding: 2px 20px;
+}
+
+.quantity-controls2 h4{
+  color: #023055;
+  font-size: 22px;
+
+}
+.quantity{
+  font-weight: bold;
+  font-size: 18px;
+  width: 20px;
+  text-align: center;
+  color: #474747;
+}
+.myidea2{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-left: 10px;
+
+}
+
+.add-to-cart2{
+  background-color: #023055;
+  padding: 7px 10px;
+  border: none;
+  border-radius: 3px;
+  
+}
+
+.popop{
+  display: flex;
+  flex-direction: column;
+}
+.baker-main{
+  text-align: start;
+}
+@media (max-width: 768px) {
+  .new-bakery {
+    flex-direction: column;
+    padding-left: 20px;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .new-bakery img {
+    width: 130%;
+    margin: 0;
+    padding: 0;
+    height: auto;
+  }
+
+  .bakery-container {
+    padding: 0 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .bakery-card {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
+
+  .bakery-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .box-bake {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .quantity-controls2 {
+    padding: 2px 15px;
+  }
+
+  .quantity-controls2 h4 {
+    font-size: 18px;
+  }
+
+  .quantity {
+    font-size: 16px;
+    padding: 5px 45px;
+
+  }
+
+  .myidea2 {
+    margin-left: 0;
+    align-items: center;
+  }
+
+  .add-to-cart2 {
+    padding: 6px 10px;
+    font-size: 14px;
+    width: 140px;
+
+  }
+
+  .top h2 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .baker-main {
+    text-align: center;
+  }
+}
+
+
+footer2 {
+  display: flex;
+  padding-top: 70px;
+  padding-left: 80px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-right: 80px;
+}
+
+footer2 .col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+footer2 .col p strong{
+  color: black;
+}
+footer2 .logo {
+  margin-bottom: 30px;
+  height: 40px;
+  width: auto;
+  object-fit: cover;
+}
+
+footer2 h4 {
+  font-size: 14px;
+  padding-bottom: 20px;
+  color: black;
+  
+}
+
+footer2 p {
+  font-size: 13px;
+  margin: 0 0 8px 0;
+  color: black;
+}
+
+footer2 a {
+  font-size: 13px;
+  text-decoration: none;
+  margin: 0 0 10px 0;
+  color: black;
+}
+
+
+
+footer2 .follow i {
+  padding-right: 4px;
+  margin-top: -20px;
+  cursor: pointer;
+  color: black;
+}
+
+footer2 .install .row img {
+  border: 1px solid black;
+  border-radius: 6px;
+  margin: 10px 0 15px 0;
+}
+
+footer2 .follow i:hover,
+footer2 a:hover {
+  color: #023055;
+}
+@media (max-width: 768px) {
+  footer2 {
+    flex-direction: column;
+    padding-left: 50px;
+  }
+
+}
+
+/* march jihc */
+
+.hero2 {
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  background-image: url(./jihccolleg.JPG); /* 👉 Осы жерге өз суретіңнің сілтемесін қой */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.hero2-text {
+  margin-top: 5px;
+  position: relative;
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+  z-index: 2;
+  text-align: center;
+}
+
+.main-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: transparent;
+  z-index: 3;
+}
+
+.main-header .logo img {
+  height: 38px;
+  margin-top: 5px;
+  width: auto;
+  object-fit: cover;
+}
+
+.main-header nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+
+.merch{
+  background-color: white;
+}
+#kortalar {
+  margin-top: 50px;
+  padding-left: 80px; padding-right: 80px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+
+.box {
+
+  background: white;
+  border-radius: 10px;
+  text-align: start;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  height: 450px;
+}
+.box h3{
+  color: #023055;
+  margin-left: 20px;
+  font-weight: 600;
+
+}
+.box p{
+  margin-top: 18px;
+  color: #5a5a5a;
+  margin-left: 20px;
+
+}
+.box h2{
+  margin-top: 5px;
+  color: #333;
+  margin-left: 20px;
+  font-size: 18px;
+
+}
+.box img {
+  width: 100%;
+  object-fit: cover;
+  height: 240px;
+  border-radius: 8px 8px 0px 0px;
+  
+}
+.zhyldyz {
+  color: gold;
+  margin: 5px 0;
+  margin-left: 20px;
+
+}
+@media (max-width: 768px) {
+  #kortalar {
+    grid-template-columns: repeat(1, 1fr); /* Бір ғана баған */
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 30px;
+  }
+
+  .box {
+    height: 450px; /* Биіктігі автоматты */
+  }
+
+  .box img {
+    height: 200px; /* Суреттің биіктігі */
+  }
+
+  .box h2, .box h3, .box p {
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 16px;
+  }
+
+  .zhyldyz {
+    margin-left: 15px;
+  }
+}
+
+.merch-product{
+  text-align: center;
+  margin-top: 35px;
+}
+
+.merch-product h1{
+  color: #222;
+  font-size: 42px;
+}
+.merch-product p{
+  color: #333;
+  margin-top:15px;
+font-size: 18px;
+}
+.navigation h2{
+  color: #023055;
+  display: flex;
+}
+
+
+
+.navigation {
+  margin-left: 1100px;
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  margin-top: -20px;
+
+}
+
+.navigation button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #023055;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    position: static; /* Абсолютті емес */
+    margin-left: 0;
+    margin-top: 20px;
+    justify-content: center; /* Ортасына */
+  }
+
+  .navigation h2 {
+    font-size: 18px;
+    justify-content: center;
+  }
+
+  .navigation button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .merch-product h1 {
+    font-size: 28px;
+  }
+
+  .merch-product p {
+    font-size: 16px;
+  }
+}

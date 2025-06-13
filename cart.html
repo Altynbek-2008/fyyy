@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Корзина</title>
+  <style>
+    html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+    body {
+      max-width: 1090px;
+      margin: 0 auto;
+
+    }
+
+    .main-header {
+      width: 100%;
+      height: 80px;
+      padding: 10px 0px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .menu-body {
+      padding-top: 10px;
+    }
+
+    .logo img {
+      width: auto;
+      height: 34px;
+      object-fit: cover;
+    }
+
+    .menu {
+      background-color: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(11px);
+      padding: 10px 30px;
+      border-radius: 40px;
+
+      display: flex;
+      gap: 30px;
+      box-shadow: 0 0 9px #023055;
+      margin-left: 400px;
+      position: fixed;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #222;
+      font-size: 16px;
+      transition: color 0.3s;
+      font-weight: 600;
+    }
+
+    .menu a:hover {
+      text-decoration: underline;
+    }
+
+    .burger {
+  font-size: 25px;
+  color: black;
+  cursor: pointer;
+  display: none; /* десктопта жасыру */
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  z-index: 2001;
+}
+
+/* Мобильді меню */
+.mobile-menu {
+  background-color: #094270;
+  position: fixed;
+  top: 0;
+  right: -100%; /* Бастапқыда жасыру */
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 60px 20px;
+  transition: right 0.3s ease;
+  z-index: 2000;
+}
+
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.close-btn {
+  font-size: 45px;
+  color: white;
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  cursor: pointer;
+}
+
+/* Тек мобильде көрсету */
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .menu {
+    display: none; /* Десктоп мәзірін жасыру */
+  }
+
+ .logo img {
+    margin-bottom: 10px;
+    margin-left: 40px;    
+  }
+}
+
+    .cart-item {
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .oneline {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .oneline img {
+      width: 290px;
+      height: 280px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .mykorzina {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .mykorzina h1 {
+      font-size: 20px;
+      margin: 0 0 10px;
+      word-break: break-word;
+    }
+
+    .kosy {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .kosy h3 {
+      margin: 0;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      background-color: #eee;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    @media (max-width: 768px) {
+  .oneline {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .oneline img {
+    width: 100%;
+
+    height: 200px;
+    object-fit: cover;
+    max-width: 320px;
+  }
+
+  .mykorzina {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .mykorzina h1 {
+    font-size: 18px;
+  }
+
+  .kosy {
+    justify-content: center;
+  }
+}
+
+    .mykorzina button {
+      padding: 6px 12px;
+      background-color: #023055;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      width: fit-content;
+      cursor: pointer;
+    }
+
+    .mykorzina button:hover {
+      background-color: #e04a4a;
+    }
+
+   
+    .prices{
+  display: flex;
+  gap: 20px;
+}
+  .prices h3{
+    border: 1px solid #e04a4a;
+    padding:  13px 30px;
+    text-align: center;
+    align-content: center;
+    background-color: #e04a4a;
+    border-radius: 10px;
+    color: #ffffff;
+  }
+
+    #total-price {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+      width: 230px;
+      padding: 5px 5px;
+      height: 40px;
+      align-content: center;
+      text-align: center;
+      color: #ffffff;
+      border: 1px solid #023055;
+      background-color: #023055;
+      border-radius: 10px;
+    }
+
+
+    @media (max-width: 768px) {
+  .text-korz {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .prices {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .prices h3 {
+    width: 40%;
+    font-size: 16px;
+  }
+
+  .mykorzina button {
+    width: 40%;
+    text-align: center;
+  }
+
+  #total-price {
+    width: 50%;
+    font-size: 18px;
+    height: auto;
+    padding: 10px;
+  }
+}
+footer {
+  display: flex;
+  padding-top: 30px;
+  padding-left: 10px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-right: 80px;
+}
+
+footer .col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+footer .logo {
+  height: 40px;
+  margin-top: 20px;
+  width: auto;
+  object-fit: cover;
+}
+
+footer h4 {
+  font-size: 14px;
+  padding-bottom: 20px;
+  
+}
+
+footer p {
+  font-size: 13px;
+  margin: 0 0 8px 0;
+}
+
+footer a {
+  font-size: 13px;
+  text-decoration: none;
+  margin: 0 0 10px 0;
+  color: black;
+}
+
+
+
+footer .follow i {
+  padding-right: 4px;
+  margin-top: -20px;
+  cursor: pointer;
+  color: black;
+}
+
+footer .install .row img {
+  border: 1px solid black;
+  border-radius: 6px;
+  margin: 10px 0 15px 0;
+}
+
+footer .follow i:hover,
+footer a:hover {
+  color: #023055;
+}
+.pay img {
+height: 30px;
+width: auto;
+}
+.pay{
+  display: flex;
+  gap: 10px;
+
+}
+
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    padding-left: 50px;
+  }
+}
+
+  </style>
+  <link
+  rel="stylesheet"
+  href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">
+      <img src="./logo bluee.png" alt="Logo" />
+    </div>
+
+    <nav class="menu">
+      <a href="./index.html">Home</a>
+      <a href="./menu.html">Menu</a>
+      <a href="./merch.html">Merch</a>
+      <a href="./cart.html">My Cart</a>
+    </nav>
+
+    <div id="burger" class="burger">&#9776;</div>
+
+    <!-- Мобильді меню -->
+    <div id="mobileMenu" class="mobile-menu">
+      <span id="closeBtn" class="close-btn">&times;</span>
+      <a href="./index.html">Home</a>
+      <a href="./menu.html">Menu</a>
+      <a href="./merch.html">Merch</a>
+      <a href="./cart.html">Cart</a>
+    </div>
+  </header>
+
+  <div class="text-korz">
+    <h1>🛒 My Carts</h1>
+    <div id="cart-container"></div>
+
+    <div class="prices">
+      <div id="total-price">Totle Price: 0 ₸</div>
+      <h3 onclick="sendToWhatsApp()">Buy</h3>
+    </div>
+    
+  </div>
+  <footer class="section-p1">
+    <div class="col">
+      <img class="logo" src="./logo bluee.png" alt="" />
+      <h4>Contact</h4>
+      <p><strong>Address:</strong> Taraz, Street: Pushkin 154</p>
+      <p><strong>Phone:</strong> +7 777 777 77 77</p>
+      <p><strong>Hours:</strong> 8:45 - 16:40, Mon - Fri</p>
+      <div class="follow">
+        <h4>Follow us</h4>
+        <div class="icon">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-pinterest-p"></i>
+          <i class="fab fa-youtube"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <h4>About</h4>
+      <a href="#">About us</a>
+      <a href="#">Delivery Information</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <div class="col">
+      <h4>My Account</h4>
+      <a href="#">Sign In</a>
+      <a href="#">View Cart</a>
+      <a href="#">My Wishlist</a>
+      <a href="#">Track My Order</a>
+      <a href="#">Help</a>
+    </div>
+    <div class="col install">
+      <p>Secured Payment Gateway</p>
+      <div class="pay">
+        <img src="./kass.png" alt="">
+        <img src="./money.png" alt="">
+      </div>
+   </div>
+
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  const burger = document.getElementById("burger");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const closeBtn = document.getElementById("closeBtn");
+
+  burger.addEventListener("click", function () {
+    mobileMenu.style.right = "0";
+    burger.style.display = "none"; // Бургерді жасыру
+  });
+
+  closeBtn.addEventListener("click", function () {
+    mobileMenu.style.right = "-100%";
+    burger.style.display = "block"; // Бургерді қайта шығару
+  });
+});
+
+
+
+    function getCart() {
+      return JSON.parse(localStorage.getItem('cart')) || [];
+    }
+  
+    function renderCart() {
+      const container = document.getElementById('cart-container');
+      const cart = getCart();
+      container.innerHTML = '';
+  
+      let total = 0;
+  
+      if (cart.length === 0) {
+        container.innerHTML = '<p>shopping cart is empty!</p>';
+        document.getElementById('total-price').textContent = 'Жалпы баға: 0 ₸';
+        return;
+      }
+  
+      cart.forEach(item => {
+        const itemTotal = parseInt(item.price) * item.quantity;
+        total += itemTotal;
+  
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `
+          <hr>
+          <div class="oneline">
+            <img src="${item.image}" alt="${item.title}" />
+            <div class="mykorzina">
+              <h1>${item.title}</h1>
+              <div class="kosy">
+                <h3 onclick="changeQuantity('${item.id}', -1)">-</h3>
+                <h3>${item.quantity}</h3>
+                <h3 onclick="changeQuantity('${item.id}', 1)">+</h3>
+              </div>
+  
+              <h3>${item.price} x ${item.quantity} = ${itemTotal} ₸</h3>
+              <button onclick="removeFromCart('${item.id}')">❌ Delete</button>
+            </div>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+  
+      document.getElementById('total-price').textContent = 'Total Price: ' + total + ' ₸';
+    }
+  
+    function removeFromCart(id) {
+      let cart = getCart();
+      cart = cart.filter(item => item.id !== id);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    }
+  
+    function changeQuantity(id, delta) {
+      const cart = getCart();
+      const item = cart.find(i => i.id === id);
+      if (item) {
+        item.quantity += delta;
+        if (item.quantity < 1) {
+          item.quantity = 1;
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+      }
+    }
+  
+    // Бет жүктелген кезде себетті көрсету
+    document.addEventListener('DOMContentLoaded', renderCart);
+
+
+
+    function sendToWhatsApp() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  if (cart.length === 0) {
+    alert('shopping cart is empty!');
+    return;
+  }
+
+  let message = 'Hi! I want to offer this:%0A';
+
+  cart.forEach(item => {
+    message += `🛍️ ${item.title} – ${item.quantity} шт%0A`;
+  });
+
+  const phoneNumber = '77073213447'; // ← өз нөміріңіз
+  const url = `https://wa.me/${phoneNumber}?text=${message}`;
+  window.open(url, '_blank');
+}
+
+  </script>
+</body>
+</html>
